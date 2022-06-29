@@ -1,0 +1,39 @@
+.contact-form {
+  height: 50vh;
+  display: grid;
+  place-items: center;
+  background-color: #f8f8f8;
+}
+
+.container > button {
+  text-transform: inherit !important;
+  background-color: orange !important;
+  color: white;
+}
+
+.contact-input {
+  padding: 0 5px 0 5px;
+  line-height: 18px;
+  width: 300px;
+  height: 45px;
+  cursor: text;
+}
+
+textarea {
+  max-width: 307px;
+  max-height: 101px;
+  min-width: 306px;
+  min-height: 100px;
+}
+
+.container {
+  padding: 100px;
+  text-align: center;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+label {
+  justify-content: space-evenly;
+}

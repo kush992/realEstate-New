@@ -1,0 +1,9 @@
+.home-container > h1 {
+  line-height: 1px;
+}
+.home-container > h2 {
+  color: red;
+}
+.home-container {
+  padding-top: 100px;
+}
