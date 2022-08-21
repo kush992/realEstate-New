@@ -1,5 +1,6 @@
+/* eslint-disable jsx-a11y/accessible-emoji */
 import React, { useState } from "react";
-import db, { fireStorage } from "../firebase";
+import db from "../firebase";
 import "./sell-page.css";
 
 const Selling = ({ roomID }) => {
@@ -13,16 +14,6 @@ const Selling = ({ roomID }) => {
   const [images, setImages] = useState("");
 
   const [error, setError] = useState();
-
-//   const handleFileChange = async (e) => {
-//     const file = e.target.files[0];
-//     const storageRef = fireStorage.storage().ref();
-//     const fileRef = storageRef.child(file.name);
-//     await fileRef.put(file);
-//     setImageUrl(await fileRef.getDownloadURL());
-//   };
-
-//   console.log(imageUrl);
 
   const handleSubmit = (e) => {
     e.preventDefault();

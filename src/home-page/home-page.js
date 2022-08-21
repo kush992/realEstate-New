@@ -23,11 +23,11 @@ function Home() {
   return (
     <div className="sidebar-info">
       <h4>List of Areas</h4>
-      {/* <p>
+      <p>
         <Link className="goto-recent-property" to="/home-recent">
           Recent Listing
         </Link>
-      </p> */}
+      </p>
       <div className="sidebar-list">
         {propertyListing.map((property) => (
           <SidebarArea

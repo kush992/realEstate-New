@@ -3,24 +3,14 @@ import "./authentication.css";
 import Icon from "../Icons/icons";
 import { Button } from "@material-ui/core";
 import { auth, provider } from "../firebase";
-import { useStateValue } from "../redux/stateProvider";
-import { actionTypes } from "../redux/reducer";
 
 const Login = () => {
-  const [state, dispatch] = useStateValue();
+
   const signIn = () => {
-    // dispatch(createAction(actionTypes.LOGIN_INIT, loginActionData));
     auth
       .signInWithPopup(provider)
       .then((result) => {
         console.log(result);
-        // dispatch(
-        //     createAction(actionTypes.LOGIN_SUCCESS, {
-        // 		...response.data.data.loginData,
-        // 		lastStake: response.data.data.lastStake
-        // 	})
-
-        // );
         // eslint-disable-next-line no-undef
         localStorage.setItem("userDetails", result.user.email);
       })

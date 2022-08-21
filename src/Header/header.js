@@ -1,11 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./header.css";
-// import {useStateValue} from '../redux/stateProvider';
 import Icon from "../Icons/icons";
 
 function Navbar() {
-  // const [{user}] = useStateValue();
 
   return (
     <div className="nav__main">

@@ -19,13 +19,13 @@ const DARK = 'dark';
 const LIGHT = 'light';
 const THEME = 'theme';
 
-const getTheme = () => { 
+export const getTheme = () => { 
 	const currentTheme = localStorage.getItem(THEME);
 	return currentTheme ? currentTheme : LIGHT;
 };
 
-const setTheme = (darkMode) => {
+export const setTheme = (darkMode) => {
 	localStorage.setItem(THEME, darkMode ? DARK : LIGHT);
 }
 
-const isDarkMode = localStorage.setItem(THEME, DARK);
+export const isDarkMode = localStorage.setItem(THEME, DARK);

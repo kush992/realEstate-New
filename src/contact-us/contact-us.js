@@ -1,5 +1,5 @@
+/* eslint-disable jsx-a11y/accessible-emoji */
 import React, { useState } from "react";
-import firebase from "firebase";
 import db from "../firebase";
 import "./contact-us.css";
 import { Button } from "@material-ui/core";

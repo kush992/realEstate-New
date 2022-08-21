@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import db from "../firebase";
 import PropertyList from "./propertyList";
-import Home from "./home-page";
 import "./RecentProperty.css";
 
 function RecentProperty() {

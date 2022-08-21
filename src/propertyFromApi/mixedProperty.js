@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { baseUrl, isMobile, options } from "../utils/utility";
+import { baseUrl, isMobile } from "../utils/utility";
 
 import Home from "../home-page/home-page";
 import "./mixedProperty.css";

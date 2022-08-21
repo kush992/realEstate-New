@@ -18,7 +18,7 @@ const Blog = () => {
   const fetchData = () => {
     setIsLoading(true);
     fetch(
-      "https://newsapi.org/v2/everything?q=bitcoin&from=2022-03-22&sortBy=publishedAt&apiKey=a78991520000448da9094c4f9325e40d"
+      "https://newsapi.org/v2/everything?q=apple&from=2022-04-21&to=2022-04-21&apiKey=a78991520000448da9094c4f9325e40d"
     )
       .then((res) => res.json())
       .then((json) => {
@@ -38,7 +38,7 @@ const Blog = () => {
         <p>Loading</p>
       ) : (
         <div className="list1">
-          {items.map((item) => (
+          {items?.map((item) => (
             <div key={item.id} className={`blog-list`}>
               <a href={item.url} target="_blank">
                 {item.urlToImage && (
