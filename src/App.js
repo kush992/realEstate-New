@@ -41,7 +41,7 @@ const App = () => {
           <MixedProperty />
         </Route>
 
-        <Route path="/sell">{!userToken} ? <Login /> : <Selling />ß</Route>
+        <Route path="/sell">{!userToken ? <Login /> : <Selling />}</Route>
       </Switch>
     </Route>
   );
