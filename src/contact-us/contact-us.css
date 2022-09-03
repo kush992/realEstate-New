@@ -1,39 +1,99 @@
-.contact-form {
-  height: 50vh;
-  display: grid;
-  place-items: center;
-  background-color: #f8f8f8;
+/* variables */
+:root {
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  --p-10: 10px;
+  --m-10: 10px;
+  --blue-color: #1a73e8;
+  --disabled-blue-color: #7dadec;
+  --white-color: white;
+  --grey-color: #c6c5c5;
+  --error-color: red;
+  --br-4: 4px;
 }
 
-.container > button {
-  text-transform: inherit !important;
-  background-color: orange !important;
-  color: white;
+/* default styles overwriting/editing */
+button {
+  cursor: pointer;
+  background-color: var(--blue-color);
+  color: var(--white-color);
+  border: none;
+  border-radius: var(--br-4);
+  height: 30px;
+  width: 70px;
+  margin: var(--m-10);
 }
 
-.contact-input {
-  padding: 0 5px 0 5px;
-  line-height: 18px;
-  width: 300px;
-  height: 45px;
-  cursor: text;
+p {
+  margin: 0;
+  font-size: 12px;
+  font-style: italic;
 }
 
 textarea {
-  max-width: 307px;
-  max-height: 101px;
-  min-width: 306px;
-  min-height: 100px;
+  resize: none;
+    width: 250px;
+    height: 100px;
+    padding: var(--p-10);
+    margin: var(--m-10);
+    font-family: var(--font-family);
+    border-radius: var(--br-4);
+    border: 1px solid var(--grey-color);
+    max-width: inherit;
+    text-transform: none;
+  }
+  
+  input {
+    width: 250px;
+    height: 35px;
+    margin: var(--m-10);
+    padding: var(--p-10);
+    border-radius: var(--br-4);
+    border: 1px solid var(--grey-color);
+    text-transform: capitalize;
+  }
+  
+  ::placeholder {
+    font-family: var(--font-family);
+  }
+  
+  :focus {
+    border: 1px solid var(--blue-color);
 }
 
-.container {
-  padding: 100px;
+/* styles by classNames */
+.contact {
   text-align: center;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  width: 30%;
+    padding: 50px;
+    /* margin-inline: auto; */
+    border: 1px solid var(--grey-color);
+    border-radius: var(--br-4);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .contact__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: var(--m-10);
+  }
+  
+  /* other styles - used for conditional styles */
+  .cursor__not-allowed {
+    cursor: not-allowed;
+    background-color: var(--disabled-blue-color);
 }
 
-label {
-  justify-content: space-evenly;
+.text-transform__normal {
+  text-transform: initial;
+}
+
+.error-boundary {
+  border: 1px solid var(--error-color);
 }

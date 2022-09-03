@@ -5,13 +5,15 @@ import {
   Redirect
 } from "react-router-dom";
 import Navbar from "./Header/header";
-// import Login from "./authentication/authentication";
+import Login from "./authentication/authentication";
 import Blog from "./blog-page/blog";
 import Contact from "./contact-us/contact-us";
 import Property from "./home-page/property";
-// import Selling from "./sell-page/sell-page";
+import Selling from "./sell-page/sell-page";
 import Main from "./landing-page/landing-page";
 import MixedProperty from "./propertyFromApi/mixedProperty";
+
+import { userToken } from "./utils/utility";
 
 const App = () => {
 
@@ -39,7 +41,7 @@ const App = () => {
           <MixedProperty />
         </Route>
 
-        {/* <Route path="/sell">{!user ? <Login /> : <Selling />}</Route> */}
+        <Route path="/sell">{!userToken} ? <Login /> : <Selling />ß</Route>
       </Switch>
     </Route>
   );

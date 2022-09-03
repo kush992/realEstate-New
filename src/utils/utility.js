@@ -1,6 +1,6 @@
 export const baseUrl = "https://bayut.p.rapidapi.com";
 
-export const options = {
+export const commonApiHeaders = {
 	method: 'GET',
 	headers: {
 		'X-RapidAPI-Host': 'us-real-estate.p.rapidapi.com',
@@ -8,6 +8,10 @@ export const options = {
 	}
 };
 
+// userInfo from localStorage
+export const userToken = localStorage.getItem("userToken");
+
+// checks for the device type
 export const isMobile = () => {
 	let check = false;
 	// eslint-disable-next-line no-useless-escape
@@ -15,6 +19,11 @@ export const isMobile = () => {
 	return check;
 }
 
+// regex
+export const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+export const generalRegex = /\d/;
+
+// dark mode related functions
 const DARK = 'dark';
 const LIGHT = 'light';
 const THEME = 'theme';
