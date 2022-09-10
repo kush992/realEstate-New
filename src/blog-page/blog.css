@@ -51,3 +51,13 @@
   height: 100%;
   width: 100%;
 }
+
+.loading {
+  padding-top: 100px;
+  text-align: center;
+}
+
+.errorMessage {
+  padding-top: 100px;
+  text-align: center;
+}

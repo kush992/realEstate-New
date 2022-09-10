@@ -1,41 +1,37 @@
 /* eslint-disable react/jsx-no-target-blank */
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
+import { BLOG_URL, fetchData } from "../utils/utility";
 import "./blog.css";
 
 const Blog = () => {
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
 
-  // newsapi api key: a78991520000448da9094c4f9325e40d
-  // newsapi api link: https://newsapi.org/v2/everything?q=apple&from=2022-04-21&to=2022-04-21&apiKey=a78991520000448da9094c4f9325e40d
-
-  //--------------------------------------------------------------------------------
-
-  // https://www.thenewsapi.com/account/dashboard - API Token: 7BnnTSB6aYYAWxDk1iwIq5bME9EQ8lkNGiYFc5W4
-  // All news: https://api.thenewsapi.com/v1/news/all?api_token=7BnnTSB6aYYAWxDk1iwIq5bME9EQ8lkNGiYFc5W4
-  // Top stories: https://api.thenewsapi.com/v1/news/top?api_token=7BnnTSB6aYYAWxDk1iwIq5bME9EQ8lkNGiYFc5W4
-
-  const fetchData = () => {
+  const fetchBlogs = async () => {
     setIsLoading(true);
-    fetch(
-      "https://newsapi.org/v2/everything?q=apple&from=2022-04-21&to=2022-04-21&apiKey=a78991520000448da9094c4f9325e40d"
-    )
-      .then((res) => res.json())
-      .then((json) => {
-        setIsLoading(false);
-        setItems(json);
-        console.log(json);
-      });
+
+    try {
+      const data = await fetchData(BLOG_URL);
+      setItems(data.data);
+    } catch (error) {
+      console.log(error);
+      setIsError(true);
+    }
+    setIsLoading(false);
   };
 
   useEffect(() => {
-    fetchData();
+    fetchBlogs();
   }, []);
 
   return (
     <>
+      {isError && (
+        <p className="errorMessage">Ups... Error while fetching the content</p>
+      )}
       {isLoading ? (
-        <p>Loading</p>
+        <p className="loading">Hang tight, getting you there...</p>
       ) : (
         <div className="list1">
           {items?.map((item) => (
