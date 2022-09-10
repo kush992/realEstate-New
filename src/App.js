@@ -11,6 +11,8 @@ import MixedProperty from "./components/propertyFromApi/mixedProperty";
 import { APP_URL, userToken } from "./common/utility";
 import Layout from "./components/layout/layout";
 
+import './app.css'
+
 const App = () => {
   return (
     <Route>

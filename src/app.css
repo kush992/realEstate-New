@@ -17,3 +17,9 @@
     --tab-max: 768px;
     --laptop-min: 769px;
 }
+
+a:active,
+a:focus {
+    outline: 0;
+    border: none;
+}
