@@ -53,7 +53,7 @@ const Navbar = () => {
             </li>
           ) : (
             <li>
-              <span onClick={handleSignOut} className="logout__button">
+              <span onClick={handleSignOut} className="logout__button" title="LogOut...?">
                 <img src={userData.photoURL} height={50} width={50} alt="user-profile-img" />
               </span>
             </li>
