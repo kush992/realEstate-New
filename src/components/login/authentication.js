@@ -1,9 +1,9 @@
 import React from "react";
 import "./authentication.css";
-import Icon from "../Icons/icons";
+import Icon from "../../common/icons/icons";
 import { Button } from "@material-ui/core";
-import { auth, provider } from "../firebase";
-import { userToken } from "../utils/utility";
+import { auth, provider } from "../../firebase";
+import { userToken } from "../../common/utility";
 
 const Login = () => {
 
@@ -15,7 +15,8 @@ const Login = () => {
         const user = resp.user;
 
         localStorage.setItem("userToken", token);
-        localStorage.setItem("userData", user);
+        localStorage.setItem("userData", JSON.stringify(user));
+        window.location.reload();
       })
       .catch((error) => console.error(error));
   };

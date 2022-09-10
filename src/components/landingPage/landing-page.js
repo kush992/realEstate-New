@@ -1,5 +1,5 @@
 import React from "react";
-import Icon from "../Icons/icons";
+import Icon from "../../common/icons/icons";
 import "./landing-page.css";
 
 function Main() {

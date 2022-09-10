@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React, { useState, useEffect } from "react";
-import { BLOG_URL, fetchData } from "../utils/utility";
+import { BLOG_URL, fetchData } from "../../common/utility";
 import "./blog.css";
 
 const Blog = () => {

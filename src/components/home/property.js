@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as useParams } from "react-router-dom";
-import db from "../firebase";
+import db from "../../firebase";
 import Home from "./home-page";
 import PropertyList from "./propertyList";
 import "./property.css";

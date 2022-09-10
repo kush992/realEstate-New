@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
 import React, { useState } from "react";
-import db from "../firebase";
+import db from "../../firebase";
 import "./sell-page.css";
 
 const Selling = ({ roomID }) => {

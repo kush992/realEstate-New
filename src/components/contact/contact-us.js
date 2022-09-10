@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
 import React, { useState } from "react";
-import db from "../firebase";
+import db from "../../firebase";
 import "./contact-us.css";
-import { generalRegex, emailRegex } from "../utils/utility";
+import { generalRegex, emailRegex } from "../../common/utility";
 
 const Contact = () => {
   const [name, setName] = useState("");

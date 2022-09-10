@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { baseUrl, isMobile } from "../utils/utility";
+import { baseUrl, isMobile } from "../../common/utility";
 
-import Home from "../home-page/home-page";
+import Home from "../home/home-page";
 import "./mixedProperty.css";
 
 const MixedProperty = () => {

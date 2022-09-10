@@ -10,4 +10,9 @@
     --grey-color: #c6c5c5;
     --error-color: red;
     --br-4: 4px;
+/* devices screen width variables */
+    --mobile-max: 480px;
+    --tab-min: 481px;
+    --tab-max: 768px;
+    --laptop-min: 769px;
 }

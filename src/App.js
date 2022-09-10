@@ -4,16 +4,16 @@ import {
   Switch,
   Redirect
 } from "react-router-dom";
-import Navbar from "./Header/header";
-import Login from "./authentication/authentication";
-import Blog from "./blog-page/blog";
-import Contact from "./contact-us/contact-us";
-import Property from "./home-page/property";
-import Selling from "./sell-page/sell-page";
-import Main from "./landing-page/landing-page";
-import MixedProperty from "./propertyFromApi/mixedProperty";
+import Navbar from "./components/header/header";
+import Login from "./components/login/authentication";
+import Blog from "./components/blog/blog";
+import Contact from "./components/contact/contact-us";
+import Property from "./components/home/property";
+import Selling from "./components/selling/sell-page";
+import Main from "./components/landingPage/landing-page";
+import MixedProperty from "./components/propertyFromApi/mixedProperty";
 
-import { userToken } from "./utils/utility";
+import { userToken } from "./common/utility";
 
 const App = () => {
 
@@ -22,26 +22,33 @@ const App = () => {
       <Navbar />
       <Switch>
         {/* App base url */}
-        <Redirect exact from="/" to="/home-recent" />
-        
-        <Route excat path="/main">
+        {/* <Redirect exact from="/" to="/home-recent" />
+
+        <Route exact path="/main">
           <Main />
         </Route>
-        <Route excat path="/contact">
+
+        <Route exact path="/contact">
           <Contact />
         </Route>
-        <Route excat path="/blog">
+
+        <Route exact path="/blog">
           <Blog />
         </Route>
-        <Route excat path="/home/:roomID">
+
+        <Route exact path="/home/:roomID">
           <Property />
         </Route>
 
-        <Route excat path="/home-recent">
+        <Route exact path="/home-recent">
           <MixedProperty />
         </Route>
 
-        <Route path="/sell">{!userToken ? <Login /> : <Selling />}</Route>
+        <Route exact path="/login">
+          <Login />
+        </Route>
+
+        <Route path="/sell">{!userToken ? <Login /> : <Selling />}</Route> */}
       </Switch>
     </Route>
   );

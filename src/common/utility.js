@@ -23,6 +23,7 @@ export const fetchData = async (url) => {
 
 // userInfo from localStorage
 export const userToken = localStorage.getItem("userToken");
+export const userData = JSON.parse(localStorage.getItem("userData"));
 
 // checks for the device type
 export const isMobile = () => {
@@ -42,7 +43,8 @@ export const isMobile = () => {
 };
 
 // regex
-export const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+export const emailRegex =
+  /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 export const generalRegex = /\d/;
 
 // dark mode related functions
@@ -60,3 +62,15 @@ export const setTheme = (darkMode) => {
 };
 
 export const isDarkMode = localStorage.setItem(THEME, DARK);
+
+// application url
+export const APP_URL = {
+  contact: "/contact",
+  login: "/login",
+  blog: "/blog",
+  sell: "/sell",
+  homeRecent: "/home-recent",
+  home: "home",
+  root: "/",
+  main: "/main",
+};
