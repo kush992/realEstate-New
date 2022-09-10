@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { Switch } from "@material-ui/core";
 import Icon from "../../common/icons/icons";
 import { APP_URL, isMobile, userData, userToken } from "../../common/utility";
@@ -15,41 +14,41 @@ const Navbar = () => {
   return (
     <div className="nav">
       <div className="nav__left">
-        <Link to={APP_URL.main} className="nav__link">
+        <a href={APP_URL.main} className="nav__link">
           <Icon
             icon="bhalodi-real-estate"
             height={`${isMobile() ? 30 : 50}`}
             color="orange"
           />
-        </Link>
+        </a>
       </div>
       <div className="nav__right">
         <ul className="nav__list">
           <li>
-            <Link to={APP_URL.homeRecent} className="nav__link">
+            <a href={APP_URL.homeRecent} className="nav__link">
               Home
-            </Link>
+            </a>
           </li>
           <li>
-            <Link to={APP_URL.sell} className="nav__link">
+            <a href={APP_URL.sell} className="nav__link">
               Sell
-            </Link>
+            </a>
           </li>
           <li>
-            <Link to={APP_URL.blog} className="nav__link">
+            <a href={APP_URL.blog} className="nav__link">
               Blog
-            </Link>
+            </a>
           </li>
           <li>
-            <Link to={APP_URL.contact} className="nav__link">
+            <a href={APP_URL.contact} className="nav__link">
               Contact
-            </Link>
+            </a>
           </li>
           {!userToken ? (
             <li>
-              <Link to={APP_URL.login} className="nav__link">
+              <a href={APP_URL.login} className="nav__link">
                 Login
-              </Link>
+              </a>
             </li>
           ) : (
             <li>
@@ -59,6 +58,7 @@ const Navbar = () => {
             </li>
           )}
         </ul>
+        {/* TODO: add mode toggling functionality */}
         <div className="theme__switch">
           <Switch />
         </div>

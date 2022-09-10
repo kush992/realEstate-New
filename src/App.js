@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  BrowserRouter as Route,
-  Switch,
-  Redirect
-} from "react-router-dom";
-import Navbar from "./components/header/header";
+import { BrowserRouter as Route, Switch, Redirect } from "react-router-dom";
 import Login from "./components/login/authentication";
 import Blog from "./components/blog/blog";
 import Contact from "./components/contact/contact-us";
@@ -13,42 +8,63 @@ import Selling from "./components/selling/sell-page";
 import Main from "./components/landingPage/landing-page";
 import MixedProperty from "./components/propertyFromApi/mixedProperty";
 
-import { userToken } from "./common/utility";
+import { APP_URL, userToken } from "./common/utility";
+import Layout from "./components/layout/layout";
 
 const App = () => {
-
   return (
     <Route>
-      <Navbar />
       <Switch>
         {/* App base url */}
-        {/* <Redirect exact from="/" to="/home-recent" />
+        <Redirect exact from={APP_URL.root} to={APP_URL.main} />
 
-        <Route exact path="/main">
-          <Main />
+        <Route exact path={APP_URL.main}>
+          <Layout>
+            <Main />
+          </Layout>
         </Route>
 
-        <Route exact path="/contact">
-          <Contact />
+        <Route exact path={APP_URL.contact}>
+          <Layout>
+            <Contact />
+          </Layout>
         </Route>
 
-        <Route exact path="/blog">
-          <Blog />
+        <Route exact path={APP_URL.blog}>
+          <Layout>
+            <Blog />
+          </Layout>
         </Route>
 
-        <Route exact path="/home/:roomID">
-          <Property />
+        <Route exact path={`${APP_URL.home}/:roomID`}>
+          <Layout>
+            <Property />
+          </Layout>
         </Route>
 
-        <Route exact path="/home-recent">
-          <MixedProperty />
+        <Route exact path={APP_URL.homeRecent}>
+          <Layout>
+            <MixedProperty />
+          </Layout>
         </Route>
 
-        <Route exact path="/login">
-          <Login />
+        <Route exact path={APP_URL.login}>
+          <Layout>
+            <Login />
+          </Layout>
         </Route>
 
-        <Route path="/sell">{!userToken ? <Login /> : <Selling />}</Route> */}
+        <Route path={APP_URL.sell}>
+          {!userToken ? (
+            <Layout>
+              <Login />
+            </Layout>
+          ) : (
+            <Layout>
+              <Selling />
+            </Layout>
+          )}
+        </Route>
       </Switch>
     </Route>
   );

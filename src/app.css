@@ -10,6 +10,7 @@
     --grey-color: #c6c5c5;
     --error-color: red;
     --br-4: 4px;
+    --text-color: black;
 /* devices screen width variables */
     --mobile-max: 480px;
     --tab-min: 481px;
