@@ -7,6 +7,7 @@ import Property from "./components/home/property";
 import Selling from "./components/selling/sell-page";
 import Main from "./components/landingPage/landingPage";
 import MixedProperty from "./components/propertyFromApi/mixedProperty";
+import RecentProperty from "./components/home/RecentProperty"
 
 import { APP_URL, userToken } from "./common/utility";
 import Layout from "./components/layout/layout";
@@ -44,9 +45,15 @@ const App = () => {
           </Layout>
         </Route>
 
-        <Route exact path={APP_URL.homeRecent}>
+        <Route exact path={APP_URL.mixedProperty}>
           <Layout>
             <MixedProperty />
+          </Layout>
+        </Route>
+
+        <Route exact path={APP_URL.homeRecent}>
+          <Layout>
+            <RecentProperty />
           </Layout>
         </Route>
 

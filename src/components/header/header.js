@@ -26,7 +26,7 @@ const Navbar = () => {
       <div className="nav__right">
         <ul className="nav__list">
           <li>
-            <NavLink exact to={APP_URL.homeRecent} className="nav__link" >
+            <NavLink exact to={APP_URL.mixedProperty} className="nav__link" >
               Home
             </NavLink>
           </li>

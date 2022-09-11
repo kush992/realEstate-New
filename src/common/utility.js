@@ -73,4 +73,5 @@ export const APP_URL = {
   home: "home",
   root: "/",
   main: "/main",
+  mixedProperty: "/mixed-property"
 };

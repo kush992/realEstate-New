@@ -32,7 +32,7 @@
   flex-grow: 1;
   background-color: white;
   width: 22%;
-  box-shadow: 0px 0px 11px 1px rgba(114, 110, 110, 0.44);
+  box-shadow: var(--custom-box-shadow);
   cursor: pointer;
 }
 

@@ -11,6 +11,7 @@
     --error-color: red;
     --br-4: 4px;
     --text-color: black;
+    --custom-box-shadow: 0px 6px 50px -18px rgb(255 126 0);
 /* devices screen width variables */
     --mobile-max: 480px;
     --tab-min: 481px;
@@ -22,4 +23,7 @@ a:active,
 a:focus {
     outline: 0;
     border: none;
+}
+::-webkit-scrollbar {
+    display: none;
 }

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import PropertyList from "../../common/propertyCard/propertyList";
 import { baseUrl, isMobile } from "../../common/utility";
 
 import Home from "../home/home-page";
@@ -40,32 +41,44 @@ const MixedProperty = () => {
         {isLoading ? (
           <p>Loading...</p>
         ) : (
-          <div className={`${isMobile() ? "home-details-mobile-main" : "home-details-main"}`}
+          <div
+            className={`${
+              isMobile() ? "home-details-mobile-main" : "home-details-main"
+            }`}
           >
             {dataFetched.map((data) => {
               const string = `${data.keywords}`;
               const splitString = string.split();
               return (
-                <div
-                  key={data.id}
-                  className={`${isMobile() ? "home-details-mobile-card" : "home-details-card"}`}
-                >
-                  <div className="card-img">
-                    <img src={`${data.coverPhoto.url}`} alt="user-home" />
-                  </div>
-                  <div className="card-details">
-                    <p>Name: {data.contactName}</p>
-                    <p>Furnished: {data.furnishingStatus}</p>
-                    <p>Verified User: {data.isVerified}</p>
-                    <p>Price: {data.price}PLN</p>
-                    <p>Purpose: {data.purpose}</p>
-                    <p>Rent: {data.rentFrequency}</p>
-                    <p>Contact Information: {data.phoneNumber.mobile}</p>
-                    <div className="card-footer">
-                      <p>{splitString}</p>
-                    </div>
-                  </div>
-                </div>
+                // <div
+                //   key={data.id}
+                //   className={`${isMobile() ? "home-details-mobile-card" : "home-details-card"}`}
+                // >
+                //   <div className="card-img">
+                //     <img src={`${data.coverPhoto.url}`} alt="user-home" />
+                //   </div>
+                //   <div className="card-details">
+                //     <p>Name: {data.contactName}</p>
+                //     <p>Furnished: {data.furnishingStatus}</p>
+                //     <p>Verified User: {data.isVerified}</p>
+                //     <p>Price: {data.price}PLN</p>
+                //     <p>Purpose: {data.purpose}</p>
+                //     <p>Rent: {data.rentFrequency}</p>
+                //     <p>Contact Information: {data.phoneNumber.mobile}</p>
+                //     <div className="card-footer">
+                //       <p>{splitString}</p>
+                //     </div>
+                //   </div>
+                // </div>
+                <PropertyList
+                  address={data?.address}
+                  message={splitString}
+                  user={data.contactName}
+                  images={`${data.coverPhoto.url}`}
+                  contact={data.phoneNumber.mobile}
+                  size={data?.size}
+                  price={data.price}
+                />
               );
             })}
           </div>

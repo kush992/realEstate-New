@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import db from "../firebase";
-import PropertyList from "./propertyList";
+import db from "../../firebase";
+import PropertyList from "../../common/propertyCard/propertyList";
 import "./RecentProperty.css";
 
 function RecentProperty() {
