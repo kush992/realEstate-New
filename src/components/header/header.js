@@ -3,6 +3,7 @@ import { Switch } from "@material-ui/core";
 import Icon from "../../common/icons/icons";
 import { APP_URL, isMobile, userData, userToken } from "../../common/utility";
 import "./header.css";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const handleSignOut = () => {
@@ -14,41 +15,41 @@ const Navbar = () => {
   return (
     <div className="nav">
       <div className="nav__left">
-        <a href={APP_URL.main} className="nav__link">
+        <NavLink exact to={APP_URL.main} className="nav__link">
           <Icon
             icon="bhalodi-real-estate"
             height={`${isMobile() ? 30 : 50}`}
             color="orange"
           />
-        </a>
+        </NavLink>
       </div>
       <div className="nav__right">
         <ul className="nav__list">
           <li>
-            <a href={APP_URL.homeRecent} className="nav__link">
+            <NavLink exact to={APP_URL.homeRecent} className="nav__link" >
               Home
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a href={APP_URL.sell} className="nav__link">
+            <NavLink exact to={APP_URL.sell} className="nav__link">
               Sell
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a href={APP_URL.blog} className="nav__link">
+            <NavLink exact to={APP_URL.blog} className="nav__link">
               Blog
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a href={APP_URL.contact} className="nav__link">
+            <NavLink exact to={APP_URL.contact} className="nav__link">
               Contact
-            </a>
+            </NavLink>
           </li>
           {!userToken ? (
             <li>
-              <a href={APP_URL.login} className="nav__link">
+              <NavLink exact to={APP_URL.login} className="nav__link">
                 Login
-              </a>
+              </NavLink>
             </li>
           ) : (
             <li>

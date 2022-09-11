@@ -1,0 +1,30 @@
+.home {
+  padding-top: 100px;
+}
+
+.home h1 {
+  color: orange;
+}
+
+.home__redirection {
+  padding: 20px;
+}
+
+.home__redirection h2 {
+  padding-bottom: 10px;
+}
+
+.home__redirection a:hover {
+  background-color: white;
+  color: orange;
+  transition: all 0.1s ease-in;
+}
+
+.home__button {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  margin: 10px;
+  background-color: orange;
+  border-radius: 2px;
+}

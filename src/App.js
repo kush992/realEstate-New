@@ -5,7 +5,7 @@ import Blog from "./components/blog/blog";
 import Contact from "./components/contact/contact-us";
 import Property from "./components/home/property";
 import Selling from "./components/selling/sell-page";
-import Main from "./components/landingPage/landing-page";
+import Main from "./components/landingPage/landingPage";
 import MixedProperty from "./components/propertyFromApi/mixedProperty";
 
 import { APP_URL, userToken } from "./common/utility";

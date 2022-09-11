@@ -35,6 +35,13 @@
   font-size: 18px;
 }
 
+.nav__list:hover {
+  color: orange;
+}
+
+.nav__list a.active {
+  color: orange;
+}
 .nav__link {
   text-decoration: none;
   color: black;

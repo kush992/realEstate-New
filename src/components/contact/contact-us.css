@@ -1,18 +1,3 @@
-/* variables */
-:root {
-  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  --p-10: 10px;
-  --m-10: 10px;
-  --blue-color: #1a73e8;
-  --disabled-blue-color: #7dadec;
-  --white-color: white;
-  --grey-color: #c6c5c5;
-  --error-color: red;
-  --br-4: 4px;
-}
-
 /* default styles overwriting/editing */
 button {
   cursor: pointer;
