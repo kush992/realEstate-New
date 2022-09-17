@@ -3,9 +3,11 @@ import "./authentication.css";
 import Icon from "../../common/icons/icons";
 import { Button } from "@material-ui/core";
 import { auth, provider } from "../../firebase";
-import { userToken } from "../../common/utility";
+import { APP_URL, userToken } from "../../common/utility";
+import { useHistory } from "react-router-dom";
 
 const Login = () => {
+  const history = useHistory();
 
   const handleGoogleSignIn = () => {
     auth
@@ -21,7 +23,10 @@ const Login = () => {
       .catch((error) => console.error(error));
   };
 
-  if(userToken) return null;
+  if(userToken) {
+    history.push(APP_URL.sell);
+    return null;
+  }
 
   return (
     <div className="login">

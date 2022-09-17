@@ -35,18 +35,18 @@ const Blog = () => {
       ) : (
         <div className="list1">
           {items?.map((item) => (
-            <div key={item.id} className={`blog-list`}>
+            <div key={item.uuid} className={`blog-list`}>
               <a href={item.url} target="_blank">
-                {item.urlToImage && (
+                {item.image_url && (
                   <div className="image">
-                    <img src={item.urlToImage} alt="url" loading="lazy" />
+                    <img src={item.image_url} alt="url" loading="lazy" />
                   </div>
                 )}
                 <div className="blog-body">
                   <div className="post-info">
-                    <p>{item.author}</p>
-                    <div className="publishDate">
-                      <p>{item.publishedAt}</p>
+                    <p className="category">{item.categories}</p>
+                    <div className="date">
+                      <p>{item.published_at}</p>
                     </div>
                   </div>
                   <div className="title">
@@ -56,8 +56,8 @@ const Blog = () => {
                     <p>{item.description}</p>
                     <p>{item.content}</p>
                   </div>
-                  <div className="sourceInfo">
-                    <p>SOURCE: {item.source.name}</p>
+                  <div className="source">
+                    <p>SOURCE: {item.source}</p>
                   </div>
                 </div>
               </a>
