@@ -65,13 +65,15 @@ export const isDarkMode = localStorage.setItem(THEME, DARK);
 
 // application url
 export const APP_URL = {
+  root: "/",
+  pageNotFound: "/404",
+  notFound: "*",
   contact: "/contact",
   login: "/login",
   blog: "/blog",
   sell: "/sell",
   homeRecent: "/home-recent",
   home: "home",
-  root: "/",
   main: "/main",
   mixedProperty: "/mixed-property"
 };

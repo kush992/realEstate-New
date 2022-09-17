@@ -27,3 +27,6 @@ a:focus {
 ::-webkit-scrollbar {
     display: none;
 }
+.text-align__center {
+    text-align: center;
+}

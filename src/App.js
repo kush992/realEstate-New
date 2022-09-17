@@ -29,6 +29,9 @@ const App = () => {
             <Route path={APP_URL.sell} component={asyncComponent.Selling} />
 
             {/* <Route path={`${APP_URL.home}/:roomID`} component={asyncComponent.Property} /> */}
+
+            <Route path={APP_URL.notFound} component={asyncComponent.PageNotFound} />
+            <Redirect to={APP_URL.notFound} />
           </Switch>
         </Layout>
       </Suspense>
