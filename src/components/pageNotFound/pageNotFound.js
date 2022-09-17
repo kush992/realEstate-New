@@ -14,7 +14,7 @@ const PageNotFound = () => {
       setTimer(timer - 1);
     }, seconds);
 
-    return clearInterval(interval);
+    return () => clearInterval(interval);
   }, [timer]);
 
   if(timer < 1) history.push(APP_URL.main);
