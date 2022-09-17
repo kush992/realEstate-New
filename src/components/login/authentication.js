@@ -28,10 +28,8 @@ const Login = () => {
       <div className="loginContainer">
         <Icon icon="bhalodi-real-estate" size={200} color="orange" />
         <h1>Sign in to Bhalodi Real Estate now!</h1>
-        <h4>
-          Join to get news and updates of the company and
-          <br /> exclusive offers and prices for your home.
-        </h4>
+        <h2>LOGIN and START selling...!</h2>
+        <p>Join to get news and updates of the company and exclusive offers and prices for your home.</p>
         <Button onClick={handleGoogleSignIn}>Sign In with Google</Button>
       </div>
     </div>

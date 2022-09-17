@@ -1,6 +1,6 @@
 .nav {
   position: fixed;
-    z-index: 1;
+  z-index: 1;
     background: white;
     margin-inline: auto;
     width: 100vw;
@@ -9,10 +9,9 @@
   align-items: center;
   padding: 20px 0;
   box-shadow: var(--custom-box-shadow);
-    /* margin-bottom: 100px; */
-  }
+}
   
-  .nav__left {
+.nav__left {
     padding-left: 100px;
 }
 
@@ -60,6 +59,10 @@
   border-radius: 50%;
 }
 
+.app-icon {
+  height: 50px !important;
+  width: 50px !important;
+}
 @media (max-width: 480px) {
   .nav {
     padding: 10px 15px;
@@ -69,4 +72,8 @@
     padding: 0 5px;
     font-size: 14px;
   }
+.app-icon {
+  height: 30px !important;
+  width: 30px !important;
+}
 }

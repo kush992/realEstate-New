@@ -1,81 +1,38 @@
-import React from "react";
-import { BrowserRouter as Route, Switch, Redirect } from "react-router-dom";
-import Login from "./components/login/authentication";
-import Blog from "./components/blog/blog";
-import Contact from "./components/contact/contact-us";
-import Property from "./components/home/property";
-import Selling from "./components/selling/sell-page";
-import Main from "./components/landingPage/landingPage";
-import MixedProperty from "./components/propertyFromApi/mixedProperty";
-import RecentProperty from "./components/home/RecentProperty"
+import React, { Suspense } from "react";
+import { Route, Switch, Redirect, useLocation } from "react-router-dom";
+import * as asyncComponent from "./asyncComponents";
 
 import { APP_URL, userToken } from "./common/utility";
 import Layout from "./components/layout/layout";
 
-import './app.css'
+import "./app.css";
 
 const App = () => {
+
+  const location = useLocation();
+
   return (
-    <Route>
-      <Switch>
-        {/* App base url */}
-        <Redirect exact from={APP_URL.root} to={APP_URL.main} />
+    <>
+      <Suspense fallback={<div>loading....</div>}>
+        <Layout>
+          <Switch>
+            {location.pathname === APP_URL.sell && !userToken && <Redirect exact to={APP_URL.login}/>}
 
-        <Route exact path={APP_URL.main}>
-          <Layout>
-            <Main />
-          </Layout>
-        </Route>
+            <Redirect exact from={APP_URL.root} to={APP_URL.main} />
 
-        <Route exact path={APP_URL.contact}>
-          <Layout>
-            <Contact />
-          </Layout>
-        </Route>
+            <Route path={APP_URL.blog} component={asyncComponent.Blog} />
+            <Route path={APP_URL.contact} component={asyncComponent.Contact} />
+            <Route path={APP_URL.main} component={asyncComponent.Main} />
+            <Route path={APP_URL.mixedProperty} component={asyncComponent.MixedProperty} />
+            <Route path={APP_URL.homeRecent} component={asyncComponent.RecentProperty} />
+            <Route path={APP_URL.login} component={asyncComponent.Login} />
+            <Route path={APP_URL.sell} component={asyncComponent.Selling} />
 
-        <Route exact path={APP_URL.blog}>
-          <Layout>
-            <Blog />
-          </Layout>
-        </Route>
-
-        <Route exact path={`${APP_URL.home}/:roomID`}>
-          <Layout>
-            <Property />
-          </Layout>
-        </Route>
-
-        <Route exact path={APP_URL.mixedProperty}>
-          <Layout>
-            <MixedProperty />
-          </Layout>
-        </Route>
-
-        <Route exact path={APP_URL.homeRecent}>
-          <Layout>
-            <RecentProperty />
-          </Layout>
-        </Route>
-
-        <Route exact path={APP_URL.login}>
-          <Layout>
-            <Login />
-          </Layout>
-        </Route>
-
-        <Route path={APP_URL.sell}>
-          {!userToken ? (
-            <Layout>
-              <Login />
-            </Layout>
-          ) : (
-            <Layout>
-              <Selling />
-            </Layout>
-          )}
-        </Route>
-      </Switch>
-    </Route>
+            {/* <Route path={`${APP_URL.home}/:roomID`} component={asyncComponent.Property} /> */}
+          </Switch>
+        </Layout>
+      </Suspense>
+    </>
   );
 };
 

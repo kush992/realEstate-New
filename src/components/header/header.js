@@ -1,9 +1,9 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { Switch } from "@material-ui/core";
 import Icon from "../../common/icons/icons";
-import { APP_URL, isMobile, userData, userToken } from "../../common/utility";
+import { APP_URL, userData, userToken } from "../../common/utility";
 import "./header.css";
-import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const handleSignOut = () => {
@@ -18,7 +18,7 @@ const Navbar = () => {
         <NavLink exact to={APP_URL.main} className="nav__link">
           <Icon
             icon="bhalodi-real-estate"
-            height={`${isMobile() ? 30 : 50}`}
+            className="app-icon"
             color="orange"
           />
         </NavLink>

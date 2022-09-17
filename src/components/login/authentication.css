@@ -1,5 +1,5 @@
 .login {
-  height: 100vh;
+  height: 80vh;
   display: grid;
   place-items: center;
   background-color: #f8f8f8;
@@ -17,8 +17,8 @@
   margin-bottom: 40px;
 }
 .loginContainer > button {
+  width: 200px;
   margin-top: 50px;
-  text-transform: inherit !important;
-  background-color: orange !important;
+  background-color: orange;
   color: white;
 }
