@@ -2,7 +2,7 @@
   width: 100%;
   padding-left: 17%;
   color: #05386b;
-  background-color: #f8f8f8;
+  /* background-color: #f8f8f8; */
 }
 .property-list {
   flex-wrap: wrap;

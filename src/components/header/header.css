@@ -1,7 +1,7 @@
 .nav {
   position: fixed;
   z-index: 1;
-    background: white;
+    /* background: white; */
     margin-inline: auto;
     width: 100vw;
   display: flex;
@@ -39,11 +39,11 @@
 }
 
 .nav__list a.active {
-  color: orange;
+  border-bottom: 1px solid orange;
 }
 .nav__link {
   text-decoration: none;
-  color: black;
+  color: orange;
 }
 
 .nav__link :focus {

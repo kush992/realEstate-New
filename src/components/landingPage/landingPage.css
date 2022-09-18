@@ -16,7 +16,7 @@
 }
 
 .home__redirection a:hover {
-  background-color: white;
+  /* background-color: white; */
   color: orange;
   transition: all 0.1s ease-in;
 }

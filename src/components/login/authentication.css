@@ -2,12 +2,12 @@
   height: 80vh;
   display: grid;
   place-items: center;
-  background-color: #f8f8f8;
+  /* background-color: #f8f8f8; */
 }
 .loginContainer {
   padding: 100px;
   text-align: center;
-  background-color: white;
+  /* background-color: white; */
   border-radius: 10px;
   box-shadow: var(--custom-box-shadow);
 }

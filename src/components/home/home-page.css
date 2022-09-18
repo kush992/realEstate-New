@@ -2,7 +2,7 @@
   padding: 5px;
   margin: 10px;
   border-radius: 4px;
-  background-color: white;
+  /* background-color: white; */
   width: 200px;
 }
 
@@ -12,7 +12,6 @@
 }
 
 .sidebar-list {
-  color: #383838;
   line-height: 0.1cm;
   align-items: center;
 }
@@ -25,12 +24,11 @@
 .goto-recent-property {
   line-height: 0.1cm;
   text-decoration: none;
-  color: #383838;
+  color: orange;
   padding-bottom: 20px;
 }
 
-.sidebarArea {
-  border-radius: 4px;
-  border-bottom: 2px solid #f8f8f8;
+.sidebar-area {
+  border-bottom: 0.1px solid;
   cursor: pointer;
 }

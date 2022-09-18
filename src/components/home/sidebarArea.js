@@ -12,7 +12,7 @@ function SidebarArea({ title, id }) {
   };
 
   return (
-    <div className="sidebarArea" onClick={selectChannel}>
+    <div className="sidebar-area" onClick={selectChannel}>
       {(title = <p>{title}</p>)}
     </div>
   );

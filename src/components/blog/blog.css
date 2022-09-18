@@ -36,7 +36,7 @@
   border-radius: 4px;
   margin: 8px;
   flex-grow: 1;
-  background-color: white;
+  /* background-color: white; */
   box-shadow: var(--custom-box-shadow);
   cursor: pointer;
 }
